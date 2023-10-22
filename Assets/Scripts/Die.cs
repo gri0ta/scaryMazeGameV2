@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Die : MonoBehaviour
 {
-    public GameObject jumpscare;
+    //public GameObject jumpscare;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +19,10 @@ public class Die : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        jumpscare.SetActive(true);
+        if (collision.gameObject.name.Contains("Wall"))
+        {
+            transform.position = Vector3.zero; 
+        }
+
     }
 }
