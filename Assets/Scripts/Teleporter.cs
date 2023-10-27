@@ -6,14 +6,14 @@ using UnityEngine.SceneManagement;
 public class Teleporter : MonoBehaviour
 {
     public string nextLevelName;
-    public GameObject jumpscare;
+    
 
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.name.Contains("Player"))
         {
             SceneManager.LoadScene(nextLevelName);
-            jumpscare.SetActive(false);
+            
         }
     }
 
