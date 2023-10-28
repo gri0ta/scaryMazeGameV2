@@ -6,13 +6,12 @@ using UnityEngine.SceneManagement;
 public class Play : MonoBehaviour
 {
     public GameObject StartScreen;
+    public GameObject LevelText;
+    //public GameObject Button;
 
-    public string nextSceneName;
+    //public string nextSceneName;
 
-    private void Start()
-    {
-        StartScreen.SetActive(true);
-    }
+    
     private void OnMouseDown()
     {
         transform.position += Vector3.down * 0.1f;
@@ -22,13 +21,10 @@ public class Play : MonoBehaviour
     private void OnMouseUp()
     {
         StartScreen.SetActive(false);
-
+        LevelText.SetActive(true);
         transform.position += Vector3.up * 0.1f;
 
-        if (nextSceneName != "")
-        {
-            SceneManager.LoadScene(nextSceneName);
-        }
+        
         
     }
 }

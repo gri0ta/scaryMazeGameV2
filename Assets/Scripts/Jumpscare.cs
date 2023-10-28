@@ -6,13 +6,13 @@ public class Jumpscare : MonoBehaviour
 {
     public GameObject jumpscare;
     public GameObject levelText;
-    AudioSource source;
+    public AudioSource source;
     public AudioClip jumpScareSound;
     
     // Start is called before the first frame update
     void Start()
     {
-        source = GetComponent<AudioSource>();
+        
     }
 
     // Update is called once per frame
@@ -23,11 +23,13 @@ public class Jumpscare : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name.Contains("Teleporter"))
+        if (collision.gameObject.name.Contains("RedBlock"))
         {
             jumpscare.SetActive(true);
             levelText.SetActive(false);
+            source.clip = jumpScareSound;
             source.Play();
+            
 
         }
     }
