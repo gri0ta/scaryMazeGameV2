@@ -6,17 +6,8 @@ using UnityEngine.SceneManagement;
 public class Die : MonoBehaviour
 {
     //public GameObject jumpscare;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
+    
 
     public string nextSceneName = "Level1";
     private void OnCollisionEnter2D(Collision2D collision)
